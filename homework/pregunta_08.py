@@ -7,6 +7,25 @@ utilizar pandas, numpy o scipy.
 
 
 def pregunta_08():
+
+    with open("files\input\data.csv", "r") as f:
+        x = f.readlines()
+    x = [z.replace("\n", "") for z in x]
+    x = [z.split("\t") for z in x]
+   
+   
+    asociaciones = {}
+    for letra, numero in [(line[0], int(line[1])) for line in x]:
+        if numero not in asociaciones:
+            asociaciones[numero] = [letra]       # primera vez → lista con la letra
+        elif letra not in asociaciones[numero]:
+            asociaciones[numero].append(letra)   # si no está, agregamos la letra
+  
+
+    # Convertir a lista de tuplas, ordenada por el número
+    resultado = [(num, sorted(letras)) for num, letras in sorted(asociaciones.items())]
+
+    return resultado
     """
     Genere una lista de tuplas, donde el primer elemento de cada tupla
     contiene  el valor de la segunda columna; la segunda parte de la tupla
@@ -27,3 +46,4 @@ def pregunta_08():
      (9, ['A', 'B', 'C', 'E'])]
 
     """
+print(pregunta_08())
