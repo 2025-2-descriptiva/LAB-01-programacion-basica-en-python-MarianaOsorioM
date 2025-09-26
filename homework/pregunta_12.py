@@ -13,16 +13,6 @@ def pregunta_12():
     x = [z.replace("\n", "") for z in x]
     x = [z.split("\t") for z in x]
 
-    suma_col5 = {}
-    for line in x:
-        letra = line[0]
-        valores_col5 = [int(par.split(":")[1]) for par in line[4].split(",")]
-        suma = sum(valores_col5)
-        if letra in suma_col5:
-            suma_col5[letra] += suma
-        else:
-            suma_col5[letra] = suma
-    
     suma_por_letra = {}
 
     for line in x:
