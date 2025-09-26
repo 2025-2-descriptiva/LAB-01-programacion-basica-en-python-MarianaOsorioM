@@ -49,4 +49,4 @@ def pregunta_05():
 
     """
     
-    print(pregunta_05())
+print(pregunta_05())
