@@ -8,7 +8,7 @@ utilizar pandas, numpy o scipy.
 
 def pregunta_05():
 
-    with open("files\input\data.csv", "r") as f:
+    with open("files/input/data.csv", "r") as f:
         x = f.readlines()
     x = [z.replace("\n", "") for z in x]
     x = [z.split("\t") for z in x]

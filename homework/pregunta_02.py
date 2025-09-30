@@ -7,7 +7,7 @@ utilizar pandas, numpy o scipy.
 
 def pregunta_02():
     
-    with open("files\input\data.csv", "r") as f:
+    with open("files/input/data.csv", "r") as f:
         x = f.readlines()
 
     # Limpiar y dividir las líneas dentro de la función
